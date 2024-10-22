@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Button from '@/components/Button.astro';
+import Comments from '@/components/Comments';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -15,11 +16,13 @@ import Button from '@/components/Button.astro';
     <title>Astro + TailwindCSS</title>
   </head>
 
-  <body>
-    <div class="grid gap-4 place-items-center h-screen content-center">
-      <Button>Tailwind Button in Astro!</Button>
+  <body class="container mx-auto p-10">
+    <div class="grid gap-4">
+      <Button>Astro Component Tailwind Button</Button>
       <button class="btn btn-primary">daisyUI Button</button>
-      <a href="/playground">Visit Playground</a>
+      <a class="link link-secondary" href="/playground">Visit Playground</a>
+      <div class="divider"></div>
+      <Comments client:only="react" />
     </div>
   </body>
 </html>
