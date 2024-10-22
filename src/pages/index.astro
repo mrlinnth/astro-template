@@ -1,7 +1,7 @@
 ---
 // Component Imports
-import Button from '@/components/Button.astro';
-import Comments from '@/components/Comments';
+import Button from "@/components/Button.astro";
+import Comments from "@/components/Comments";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -21,6 +21,16 @@ import Comments from '@/components/Comments';
       <Button>Astro Component Tailwind Button</Button>
       <button class="btn btn-primary">daisyUI Button</button>
       <a class="link link-secondary" href="/playground">Visit Playground</a>
+      <label class="input input-bordered flex items-center gap-2">
+        Server side only env variable
+        <input
+          type="text"
+          class="grow"
+          placeholder="Daisy"
+          value={import.meta.env.SECRET_PASSWORD}
+          readonly
+        />
+      </label>
       <div class="divider"></div>
       <Comments client:only="react" />
     </div>
