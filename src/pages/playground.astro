@@ -1,6 +1,8 @@
 ---
-import { Card } from "@/components/Card";
-import MainLayout from "@/layouts/main.astro";
+import Comments from "@/components/interactive/Comments";
+import Button from "@/components/static/Button.astro";
+import Card from "@/components/static/Card.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Playground Page">
@@ -15,5 +17,9 @@ import MainLayout from "@/layouts/main.astro";
         readonly
       />
     </label>
+    <Button>Astro Component Tailwind Button</Button>
+    <button class="btn btn-primary">daisyUI Button</button>
+    <div class="divider"></div>
+    <Comments client:only="react" />
   </div>
 </MainLayout>

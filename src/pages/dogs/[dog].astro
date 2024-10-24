@@ -1,0 +1,27 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { dog: "clifford" } },
+    { params: { dog: "rover" } },
+    { params: { dog: "spot" } },
+  ];
+}
+
+const { dog } = Astro.params;
+---
+
+<MainLayout title="Dynamic Routes SSG Mode">
+  <div class="breadcrumbs text-sm">
+    <ul>
+      <li><a class="link" href="/dogs">Back</a></li>
+    </ul>
+  </div>
+
+  <div class="card bg-primary text-primary-content w-96 shadow-xl">
+    <div class="card-body">
+      <p>Good dog, {dog}!</p>
+    </div>
+  </div>
+</MainLayout>

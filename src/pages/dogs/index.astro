@@ -1,0 +1,16 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout title="Dynamic Routes SSG Mode">
+  <div class="card bg-primary text-primary-content w-96 shadow-xl">
+    <div class="card-body">
+      <div>There are 3 dogs defined in [dog].astro</div>
+      <ul>
+        <li><a class="link" href="/dogs/clifford">clifford</a></li>
+        <li><a class="link" href="/dogs/rover">rover</a></li>
+        <li><a class="link" href="/dogs/spot">spot</a></li>
+      </ul>
+    </div>
+  </div>
+</MainLayout>

@@ -1,38 +1,8 @@
 ---
-// Component Imports
-import Button from "@/components/Button.astro";
-import Comments from "@/components/Comments";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Hero from "@/components/static/Hero.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro + TailwindCSS</title>
-  </head>
-
-  <body class="container mx-auto p-10">
-    <div class="grid gap-4">
-      <Button>Astro Component Tailwind Button</Button>
-      <button class="btn btn-primary">daisyUI Button</button>
-      <a class="link link-secondary" href="/playground">Visit Playground</a>
-      <label class="input input-bordered flex items-center gap-2">
-        Server side only env variable
-        <input
-          type="text"
-          class="grow"
-          placeholder="Daisy"
-          value={import.meta.env.SECRET_PASSWORD}
-          readonly
-        />
-      </label>
-      <div class="divider"></div>
-      <Comments client:only="react" />
-    </div>
-  </body>
-</html>
+<MainLayout title="Home">
+  <Hero />
+</MainLayout>
