@@ -1,0 +1,34 @@
+---
+import DebugBox from "@/components/static/DebugBox.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { season: "spring" } },
+    { params: { season: "summer" } },
+    { params: { season: "autumn" } },
+    { params: { season: "winter" } },
+  ];
+}
+
+const { season } = Astro.params;
+---
+
+<MainLayout title="SSG Dynamic Routes">
+  <div class="breadcrumbs text-sm">
+    <ul>
+      <li><a class="link" href="/seasons">Back</a></li>
+    </ul>
+  </div>
+
+  <DebugBox
+    path="/pages/seasons/[season].astro"
+    message="static paths are defined here"
+  />
+
+  <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
+    <div class="card-body">
+      <p>It is {season}!</p>
+    </div>
+  </div>
+</MainLayout>

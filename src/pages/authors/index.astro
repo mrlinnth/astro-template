@@ -1,0 +1,23 @@
+---
+import DebugBox from "@/components/static/DebugBox.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout title="SSR Dynamic Routes">
+  <div class="breadcrumbs text-sm">
+    <ul>
+      <li><a class="link" href="/">Back</a></li>
+    </ul>
+  </div>
+
+  <DebugBox
+    path="/pages/authors/index.astro"
+    message="You do not need to build to see changes in SSR (Server-side Rendering). Can use in hybrid or server output."
+  />
+
+  <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
+    <div class="card-body">
+      <p>You can type any name for an author and visit</p>
+    </div>
+  </div>
+</MainLayout>

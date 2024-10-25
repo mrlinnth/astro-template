@@ -2,10 +2,12 @@
 import Comments from "@/components/interactive/Comments";
 import Button from "@/components/static/Button.astro";
 import Card from "@/components/static/Card.astro";
+import DebugBox from "@/components/static/DebugBox.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Playground Page">
+  <DebugBox path="/pages/playground.astro" />
   <div class="grid gap-4">
     <Card />
     <label class="input input-bordered flex items-center gap-2">

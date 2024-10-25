@@ -1,0 +1,22 @@
+---
+import DebugBox from "@/components/static/DebugBox.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const { author } = Astro.params;
+---
+
+<MainLayout title="SSR Dynamic Routes">
+  <div class="breadcrumbs text-sm">
+    <ul>
+      <li><a class="link" href="/authors">Back</a></li>
+    </ul>
+  </div>
+
+  <DebugBox path="/pages/authors/[author].astro" />
+
+  <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
+    <div class="card-body">
+      <p>Hello, I am author {author}!</p>
+    </div>
+  </div>
+</MainLayout>

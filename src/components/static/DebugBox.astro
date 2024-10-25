@@ -1,0 +1,13 @@
+---
+export interface Props {
+  path: string;
+  message?: string;
+}
+
+const { path, message = "" } = Astro.props as Props;
+---
+
+<div class="mockup-code my-4 text-xs font-mono">
+  <pre data-prefix="@"><code>{path}</code></pre>
+  <pre data-prefix="#"><code>{message}</code></pre>
+</div>
