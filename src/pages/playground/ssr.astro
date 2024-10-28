@@ -1,0 +1,17 @@
+---
+import DebugBox from "@/components/static/DebugBox.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout title="SSR Playground">
+  <DebugBox path="/pages/playground/ssr.astro" />
+  <div class="grid gap-4">
+    <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
+      <div class="card-body">
+        <p>Hello</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <button class="btn btn-primary" id="actionBtn">Run Action</button>
+  </div>
+</MainLayout>
