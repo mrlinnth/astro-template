@@ -12,12 +12,23 @@ import MainLayout from "@/layouts/MainLayout.astro";
 
   <DebugBox
     path="/pages/authors/index.astro"
-    message="You do not need to build to see changes in SSR (Server-side Rendering). Can use in hybrid or server output."
+    message="You do not need to build to see changes in SSR (Server-side Rendering). ```output:'hybrid|server'```"
   />
 
   <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
     <div class="card-body">
-      <p>You can type any name for an author and visit</p>
+      <p>You need to build your app and run node server to use SSR feature.</p>
+      <ul>
+        <li>yarn build</li>
+        <li>node ./dist/server/entry.mjs</li>
+      </ul>
+      <p>
+        You can type any name for an author and visit. eg: <a
+          href="/authors/john"
+          class="link">/authors/john</a
+        >
+      </p>
+      <p>Visiting in <em>output:"client"</em> mode will throw error.</p>
     </div>
   </div>
 </MainLayout>

@@ -12,7 +12,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 
   <DebugBox
     path="/pages/seasons/index.astro"
-    message="You need to build again for any changes in SSG (Static Site Generation). Can use in client output."
+    message="You need to build again for any changes in SSG (Static Site Generation). ```output:'client'````"
   />
 
   <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
@@ -26,7 +26,12 @@ import MainLayout from "@/layouts/MainLayout.astro";
       </ul>
 
       <p>
-        Visiting undefined path will result in 404 eg:
+        Visiting undefined path will result in 404 unless using <em
+          >output:"server"</em
+        >
+      </p>
+      <p>
+        eg:
         <a class="link" href="/seasons/rain">/seasons/rain</a>
       </p>
     </div>

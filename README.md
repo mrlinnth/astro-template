@@ -34,6 +34,29 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
+## SSR vs SSG mode
+
+Use either SSR or SSG mode by updating _astro.config.js_
+
+```js
+// SSR mode
+export default defineConfig({
+  output: "client",
+  // ...
+});
+```
+
+```js
+// SSG mode
+export default defineConfig({
+  output: "server",
+  adapter: node({
+    mode: "standalone",
+  }),
+  // ...
+});
+```
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -46,3 +69,8 @@ All commands are run from the root of the project, from a terminal:
 | `yarn preview`         | Preview your build locally, before deploying     |
 | `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `yarn astro -- --help` | Get help using the Astro CLI                     |
+
+For SSG mode, you will need to first build and then run node server.
+
+- `yarn build`
+- `node ./dist/server/entry.mjs`
