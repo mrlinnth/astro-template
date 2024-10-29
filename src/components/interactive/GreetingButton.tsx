@@ -1,11 +1,13 @@
-import Button from "@/components/static/Button.astro";
-
-function GreetingButtion() {
-  const handleClick = async () => {
-    alert("Helloooo");
+function GreetingButtion({ name }: { name: string }) {
+  const handleClick = () => {
+    alert(`Hello ${name}`);
   };
 
-  return <Button onClick={handleClick}>Greet me</Button>;
+  return (
+    <button className="btn btn-primary" onClick={handleClick}>
+      Greet me
+    </button>
+  );
 }
 
 export default GreetingButtion;

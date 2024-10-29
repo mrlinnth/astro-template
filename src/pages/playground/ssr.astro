@@ -2,10 +2,16 @@
 import GreetingButtion from "@/components/interactive/GreetingButton";
 import DebugBox from "@/components/static/DebugBox.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
+
+const hello = Astro.url.searchParams.get("hello") || "";
 ---
 
 <MainLayout title="SSR Playground">
-  <DebugBox path="/pages/playground/ssr.astro" />
+  <DebugBox
+    path="/pages/playground/ssr.astro"
+    message=`Received a ${Astro.request.method} request to ${Astro.request.url}`
+  />
+
   <div class="grid gap-4">
     <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
       <div class="card-body">
@@ -13,6 +19,6 @@ import MainLayout from "@/layouts/MainLayout.astro";
       </div>
     </div>
     <div class="divider"></div>
-    <GreetingButtion />
+    <GreetingButtion name={hello} client:only="react" />
   </div>
 </MainLayout>
