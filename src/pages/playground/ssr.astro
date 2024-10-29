@@ -1,5 +1,5 @@
 ---
-import GreetingButtion from "@/components/interactive/GreetingButton";
+import SSRPlayground from "@/components/interactive/Playground/SSRPlayground";
 import DebugBox from "@/components/static/DebugBox.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 
@@ -13,12 +13,6 @@ const hello = Astro.url.searchParams.get("hello") || "";
   />
 
   <div class="grid gap-4">
-    <div class="card bg-primary text-primary-content w-1/2 shadow-xl">
-      <div class="card-body">
-        <p>Hello</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <GreetingButtion name={hello} client:only="react" />
+    <SSRPlayground hello={hello} client:only="react" />
   </div>
 </MainLayout>

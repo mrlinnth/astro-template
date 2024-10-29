@@ -4,7 +4,7 @@ function GreetingButtion({ name }: { name: string }) {
   };
 
   return (
-    <button className="btn btn-primary" onClick={handleClick}>
+    <button className="btn btn-secondary" onClick={handleClick}>
       Greet me
     </button>
   );
