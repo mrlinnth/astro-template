@@ -2,7 +2,7 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/mrlinnth/astro-template)
 
-# Comes with
+## Comes with
 
 - [Tailwind](https://tailwindcss.com)
 - [ReactJS](https://react.dev)
@@ -39,7 +39,9 @@ Any static assets, like images, can be placed in the `public/` directory.
 Use either SSR or SSG mode by updating _astro.config.js_
 
 ```js
-// SSR mode
+// SSG mode
+// static site generation
+// plain static html/css files
 export default defineConfig({
   output: "client",
   // ...
@@ -47,7 +49,9 @@ export default defineConfig({
 ```
 
 ```js
-// SSG mode
+// SSR mode
+// server side rendering
+// node server with dynamic routes
 export default defineConfig({
   output: "server",
   adapter: node({
@@ -70,7 +74,7 @@ All commands are run from the root of the project, from a terminal:
 | `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `yarn astro -- --help` | Get help using the Astro CLI                     |
 
-For SSG mode, you will need to first build and then run node server.
+For SSR mode, you will need to first build and then run node server.
 
 - `yarn build`
 - `node ./dist/server/entry.mjs`
