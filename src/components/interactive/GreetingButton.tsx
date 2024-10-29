@@ -1,8 +1,11 @@
-import { actions } from "astro:actions";
+import Button from "@/components/static/Button.astro";
+
 function GreetingButtion() {
   const handleClick = async () => {
-    // Show alert pop-up with greeting from action
-    const { data, error } = await actions.getGreeting({ name: "Houston" });
-    if (!error) alert(data);
+    alert("Helloooo");
   };
+
+  return <Button onClick={handleClick}>Greet me</Button>;
 }
+
+export default GreetingButtion;

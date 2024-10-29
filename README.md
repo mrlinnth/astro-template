@@ -78,3 +78,5 @@ For SSR mode, you will need to first build and then run node server.
 
 - `yarn build`
 - `node ./dist/server/entry.mjs`
+
+Or just run `yarn ssr`. _Unlike the usual `yarn dev` command, your changes will not show up instantly. You have to run it again if there are any changes._
